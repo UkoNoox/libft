@@ -6,7 +6,7 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 12:23:21 by ugdaniel          #+#    #+#              #
-#    Updated: 2020/11/23 13:23:16 by ugdaniel         ###   ########.fr        #
+#    Updated: 2020/11/23 13:53:05 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,9 +79,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-so:
-	$(CC) -fPIC $(FLAGS) -c $(SRCS) $(SRCSBON)
-	$(CC) -shared -o libft.so $(OBJS) $(OBJSBON)
 
 .PHONY: all so bonus clean fclean re
