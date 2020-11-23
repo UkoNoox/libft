@@ -6,7 +6,7 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:05:25 by ugdaniel          #+#    #+#             */
-/*   Updated: 2020/11/23 13:23:47 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2020/11/23 16:30:10 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ static void			*free_tab(char **tab, unsigned int max)
 	i = 0;
 	while (i < max)
 		free(tab[i++]);
+	free(tab);
 	return (NULL);
 }
 
