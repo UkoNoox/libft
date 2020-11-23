@@ -1,3 +1,3 @@
 # libft
 
-Final version of my libft.
+My version of the libft project.
