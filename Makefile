@@ -6,7 +6,7 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 12:23:21 by ugdaniel          #+#    #+#              #
-#    Updated: 2021/05/29 12:22:06 by ugdaniel         ###   ########.fr        #
+#    Updated: 2021/05/29 16:15:35 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,6 @@ bonus: $(OBJS) $(OBJSBON)
 	@ar rcs $(NAME) $(OBJS) $(OBJSBON)
 
 clean:
-	@echo "Cleaning Libft object files...	\c"
 	@rm -f $(OBJS) $(OBJSBON)
 
 fclean: clean
