@@ -6,13 +6,13 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:05:25 by ugdaniel          #+#    #+#             */
-/*   Updated: 2020/11/23 16:30:10 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2021/05/29 15:34:21 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	words(char const *s, char c)
+static unsigned int	words(char *s, char c)
 {
 	int		i;
 	int		words;
@@ -35,7 +35,7 @@ static unsigned int	words(char const *s, char c)
 	return (words);
 }
 
-static int			len_to_sep(const char *s, char c, unsigned int i)
+static int	len_to_sep(char *s, char c, unsigned int i)
 {
 	int		len;
 
@@ -45,7 +45,7 @@ static int			len_to_sep(const char *s, char c, unsigned int i)
 	return (len);
 }
 
-static void			*free_tab(char **tab, unsigned int max)
+static void	*free_tab(char **tab, unsigned int max)
 {
 	unsigned int		i;
 
@@ -56,14 +56,15 @@ static void			*free_tab(char **tab, unsigned int max)
 	return (NULL);
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char			**tab;
 	unsigned int	i;
 	unsigned int	j;
 	unsigned int	k;
 
-	if (!s || !(tab = (char**)malloc(sizeof(char*) * words(s, c) + 1)))
+	tab = malloc(sizeof(char *) * words(s, c) + 1);
+	if (!s || !tab)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -71,7 +72,8 @@ char				**ft_split(char const *s, char c)
 	{
 		while (s[j] == c && s[j])
 			j++;
-		if (!(tab[i] = (char*)malloc(sizeof(char) * len_to_sep(s, c, j) + 1)))
+		tab[i] = malloc(sizeof(char) * len_to_sep(s, c, j) + 1);
+		if (!tab[i])
 			return (free_tab(tab, i));
 		k = 0;
 		while (s[j] && s[j] != c)

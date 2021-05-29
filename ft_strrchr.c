@@ -6,13 +6,13 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 09:53:11 by ugdaniel          #+#    #+#             */
-/*   Updated: 2020/11/18 15:13:55 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2021/05/24 18:08:26 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(char *s, int c)
 {
 	int		len;
 

@@ -6,7 +6,7 @@
 #    By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/16 12:23:21 by ugdaniel          #+#    #+#              #
-#    Updated: 2020/11/23 13:53:05 by ugdaniel         ###   ########.fr        #
+#    Updated: 2021/05/29 12:22:06 by ugdaniel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS	=	ft_memset.c \
 			ft_strlcpy.c \
 			ft_strlcat.c \
 			ft_strnstr.c \
+			ft_strsplit.c \
 			ft_atoi.c \
 			ft_calloc.c \
 			ft_strdup.c \
@@ -56,13 +57,13 @@ SRCSBON	=	ft_lstadd_front.c \
 			ft_lstiter.c \
 			ft_lstmap.c
 
-CC		=	clang
+CC		=	@clang
 FLAGS	=	-Wall -Wextra -Werror
 OBJS	=	$(SRCS:c=o)
 OBJSBON	=	$(SRCSBON:c=o)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(FLAGS) -I $(HEADERS) -o $@ -c $< 
@@ -70,13 +71,14 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 bonus: $(OBJS) $(OBJSBON)
-	ar rcs $(NAME) $(OBJS) $(OBJSBON)
+	@ar rcs $(NAME) $(OBJS) $(OBJSBON)
 
 clean:
-	rm -f $(OBJS) $(OBJSBON)
+	@echo "Cleaning Libft object files...	\c"
+	@rm -f $(OBJS) $(OBJSBON)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

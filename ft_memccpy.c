@@ -6,16 +6,16 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 12:54:18 by ugdaniel          #+#    #+#             */
-/*   Updated: 2020/11/19 18:13:30 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2021/05/24 18:07:59 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dest, void *src, int c, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	if (!dest && !src)
 		return (NULL);

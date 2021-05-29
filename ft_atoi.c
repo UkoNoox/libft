@@ -6,13 +6,13 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 12:28:43 by ugdaniel          #+#    #+#             */
-/*   Updated: 2020/11/22 15:34:32 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2021/05/29 15:28:24 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *nptr)
+int	ft_atoi(char *nptr)
 {
 	int		sign;
 	int		result;

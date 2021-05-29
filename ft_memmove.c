@@ -6,17 +6,17 @@
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 13:01:24 by ugdaniel          #+#    #+#             */
-/*   Updated: 2020/11/20 12:38:28 by ugdaniel         ###   ########.fr       */
+/*   Updated: 2021/05/24 18:05:55 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, void *src, size_t n)
 {
-	size_t		i;
-	char		*d;
-	const char	*s;
+	size_t	i;
+	char	*d;
+	char	*s;
 
 	if (!dest && !src)
 		return (NULL);
