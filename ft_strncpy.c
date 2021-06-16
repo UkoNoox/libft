@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 12:28:43 by ugdaniel          #+#    #+#             */
-/*   Updated: 2021/06/04 14:15:12 by ugdaniel         ###   ########.fr       */
+/*   Created: 2021/06/14 11:46:30 by ugdaniel          #+#    #+#             */
+/*   Updated: 2021/06/14 11:50:27 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *nptr)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int		sign;
-	int		result;
+	unsigned int	i;
 
-	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
-		nptr++;
-	sign = 1;
-	if (*nptr == '-')
-		sign = -1;
-	if (*nptr == '-' || *nptr == '+')
-		nptr++;
-	result = 0;
-	while (*nptr >= '0' && *nptr <= '9')
+	i = 0;
+	while (src[i] && i < n)
 	{
-		result = result * 10 + *nptr - 48;
-		nptr++;
+		dest[i] = src[i];
+		i++;
 	}
-	return (result * sign);
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 12:28:43 by ugdaniel          #+#    #+#             */
-/*   Updated: 2021/06/04 14:15:12 by ugdaniel         ###   ########.fr       */
+/*   Created: 2021/06/04 13:48:27 by ugdaniel          #+#    #+#             */
+/*   Updated: 2021/06/04 13:48:36 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *nptr)
+long	ft_atol(char *nptr)
 {
 	int		sign;
-	int		result;
+	long	result;
 
 	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
 		nptr++;

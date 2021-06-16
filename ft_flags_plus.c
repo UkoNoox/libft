@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_flags_plus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ugdaniel <ugdaniel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/17 12:28:43 by ugdaniel          #+#    #+#             */
-/*   Updated: 2021/06/04 14:15:12 by ugdaniel         ###   ########.fr       */
+/*   Created: 2020/12/08 17:50:36 by ugdaniel          #+#    #+#             */
+/*   Updated: 2021/06/14 11:20:33 by ugdaniel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *nptr)
+void	check_flags(t_flags *flags)
 {
-	int		sign;
-	int		result;
-
-	while ((*nptr >= 9 && *nptr <= 13) || *nptr == 32)
-		nptr++;
-	sign = 1;
-	if (*nptr == '-')
-		sign = -1;
-	if (*nptr == '-' || *nptr == '+')
-		nptr++;
-	result = 0;
-	while (*nptr >= '0' && *nptr <= '9')
+	if (flags->specs[SPEC_INT])
 	{
-		result = result * 10 + *nptr - 48;
-		nptr++;
+		flags->specs[SPEC_PTR] = 0;
+		flags->flags[FLAG_HASH] = 0;
+		flags->flags[FLAG_PLUS] = 0;
+		flags->flags[FLAG_SPACE] = 0;
 	}
-	return (result * sign);
+	if (flags->width < 0)
+	{
+		flags->flags[FLAG_LEFT] = 1;
+		flags->width *= -1;
+	}
+	if (flags->specs[SPEC_HEX])
+	{
+		flags->specs[SPEC_INT] = 0;
+		flags->specs[SPEC_UINT] = 0;
+	}
+	if (flags->flags[FLAG_MINUS])
+		flags->flags[FLAG_ZERO] = 0;
 }
